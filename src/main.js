@@ -5,15 +5,15 @@ import router from './router'
 import './styles/base.less'
 import './styles/iconfont.css'
 // 导入vant
-// import Vant from 'vant'
 import { Button } from 'vant'
-// import 'vant/lib/index.css'
+// 导入amfe-flexble库
+import 'amfe-flexible'
+import HmHeader from './components/hm-Header.vue'
+// 全局注册组件
+Vue.component('hm-header', HmHeader)
 
 // 导入全局组件
-// Vue.use(Vant)
 Vue.use(Button)
-// import Button from 'vant/lib/button'
-// import 'vant/lib/button/style'
 
 Vue.config.productionTip = false
 

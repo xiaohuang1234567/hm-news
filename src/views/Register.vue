@@ -1,12 +1,9 @@
 <template>
-  <div>注册组件</div>
+  <hm-header>注册</hm-header>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
-<style>
-</style>
+<style></style>
