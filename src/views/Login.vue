@@ -23,16 +23,17 @@
       <div style="margin: 16px;">
         <van-button block type="info" native-type="submit">登录</van-button>
       </div>
+
+      <p class="tips">没有账号?去<router-link to="/register">注册</router-link></p>
     </van-form>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   methods: {
     async login() {
-      const res = await axios.post('http://localhost:3000/login', {
+      const res = await this.$axios.post('/login', {
         username: this.username,
         password: this.password
       })
@@ -70,12 +71,12 @@ export default {
 </script>
 
 <style lang="less">
-.hm-logo {
-  text-align: center;
-  padding: 30px 0;
-  .iconfont {
-    font-size: 126px;
-    color: #d91e06;
+.tips {
+  padding: 15px;
+  font-size: 16px;
+  text-align: right;
+  a{
+    color:blue;
   }
 }
 </style>
