@@ -4,16 +4,20 @@ import router from './router'
 // 导入通用的样式
 import './styles/base.less'
 import './styles/iconfont.css'
-// 导入vant
-import { Button } from 'vant'
+
 // 导入amfe-flexble库
 import 'amfe-flexible'
 import HmHeader from './components/hm-Header.vue'
+import HmLogo from './components/hm-Logo.vue'
+// 导入vant
+import Vant from 'vant'
+import 'vant/lib/index.css'
 // 全局注册组件
 Vue.component('hm-header', HmHeader)
+Vue.component('hm-logo', HmLogo)
 
 // 导入全局组件
-Vue.use(Button)
+Vue.use(Vant)
 
 Vue.config.productionTip = false
 
