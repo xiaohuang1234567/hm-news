@@ -31,6 +31,11 @@
 
 <script>
 export default {
+  created() {
+    const { username, password } = this.$route.params
+    this.username = username
+    this.password = password
+  },
   methods: {
     async login() {
       const res = await this.$axios.post('/login', {
@@ -70,7 +75,12 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+// lang 用于指定css语义
+// scoped 作用域 当前组件样式带了scoped 这个样式只会在当前组件生效
+// scoped原理
+// 1. 给当前模板中所有的元素添加一个特殊的属性 data-v-xxxx
+// 2. 给当前组件的样式中的所有选择器增加一个属性选择器 div[data-v-xxxx]
 .tips {
   padding: 15px;
   font-size: 16px;

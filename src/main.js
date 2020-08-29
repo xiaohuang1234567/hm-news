@@ -9,10 +9,11 @@ import './styles/iconfont.css'
 import 'amfe-flexible'
 import HmHeader from './components/hm-Header.vue'
 import HmLogo from './components/hm-Logo.vue'
+import axios from 'axios'
+
 // 导入vant
 import Vant from 'vant'
 import 'vant/lib/index.css'
-import axios from 'axios'
 
 // 把axios 挂载到vue原型
 Vue.prototype.$axios = axios
