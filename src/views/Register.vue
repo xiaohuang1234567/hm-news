@@ -34,6 +34,8 @@
 
 <script>
 export default {
+  // 3个路由的钩子函数
+
   data() {
     return {
       user: {
