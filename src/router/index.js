@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import User from '../views/User.vue'
+import UserEdit from '../views/UserEdit.vue'
 
 Vue.use(VueRouter)
 
@@ -22,7 +23,12 @@ const routes = [
 
     // }
   },
-  { path: '/user', component: User, name: 'user' }
+  { path: '/user', component: User, name: 'user' },
+  {
+    path: '/user-edit',
+    component: UserEdit,
+    name: 'user-edit'
+  }
 ]
 
 const router = new VueRouter({
@@ -50,7 +56,9 @@ router.beforeEach(function(to, from, next) {
   //   next()
   // }
   const token = localStorage.getItem('token')
-  if (to.name !== 'user' || token) {
+  // 需要拦截的所有的页面
+  const authUrls = ['/user', '/user-edit']
+  if (!authUrls.includes(to.path) || token) {
     next()
   } else {
     router.push('/login').catch(err => err)

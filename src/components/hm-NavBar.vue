@@ -15,6 +15,8 @@ export default {
       if (this.to) {
         this.$router.push(this.to)
       }
+      // 触发click事件
+      this.$emit('click')
     }
   },
   props: {
@@ -26,7 +28,7 @@ export default {
 <style lang="less" scoped>
 .nav-item{
   display: flex;
-  border-bottom: 1px solid #e689e6;
+  border-bottom: 2px solid #000;
   height: 50px;
   align-items: center;
   margin-left: 10px;

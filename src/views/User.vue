@@ -1,7 +1,7 @@
 <template>
   <!-- 头部 -->
   <div class="user">
-    <div class="header">
+    <div class="header" @click="$router.push('/user-edit')">
       <div class="avatar">
         <!-- 路径必须拼成绝对路径 -->
         <img :src="base + user.head_img" alt="">
@@ -34,7 +34,7 @@
     <template>我的收藏</template>
     <template #content>文章/视频</template>
   </hm-navbar>
-  <hm-navbar to='edit'>设置</hm-navbar>
+  <hm-navbar to='user-edit'>设置</hm-navbar>
   <div style="margin: 15px;">
   <van-button type="danger" block @click="logout">退出</van-button>
   </div>
