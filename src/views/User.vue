@@ -22,11 +22,11 @@
       </div>
     </div>
   <!-- 导航条 -->
-  <hm-navbar to='/my-follow'>
+  <hm-navbar to="/myfollow">
     <template>我的关注</template>
     <template #content>关注的内容</template>
   </hm-navbar>
-  <hm-navbar>
+  <hm-navbar to="/mycomment">
     <template>我的跟帖</template>
     <template #content>跟帖/恢复</template>
   </hm-navbar>
