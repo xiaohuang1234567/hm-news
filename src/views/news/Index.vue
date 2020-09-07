@@ -41,6 +41,7 @@
 
 <script>
 export default {
+  name: 'index',
   data() {
     return {
       active: 0,
@@ -59,6 +60,9 @@ export default {
   },
   created() {
     this.getTabLsit()
+  },
+  destroyed() {
+
   },
   methods: {
     async getTabLsit() {

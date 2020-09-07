@@ -18,6 +18,14 @@ import 'amfe-flexible'
 
 Vue.config.productionTip = false
 
+// 创建bus
+const bus = new Vue()
+// 把bus挂载到Vue原型
+Vue.prototype.$bus = bus
+bus.$on('reply', function() {
+  console.log('bus的reply')
+})
+
 new Vue({
   router,
   render: h => h(App)

@@ -54,7 +54,7 @@ export default {
         if (this.$route.query.back) {
           this.$router.back()
         } else {
-          this.$router.push('/user')
+          this.$router.push('/')
         }
       } else {
         this.$toast.fail('登录失败')
