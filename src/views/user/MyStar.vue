@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style lang="less" scopted>
+<style lang="less" scoped>
 .item{
   border-bottom: 1px solid #ccc;
   padding: 10px;
