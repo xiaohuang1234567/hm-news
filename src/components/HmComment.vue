@@ -10,7 +10,7 @@
       </div>
       <div class="right" @click="reply">回复</div>
     </div>
-    <hm-follow :count="getCount(0, comment)" :comment="comment.parent" v-if="comment.parent"></hm-follow>
+    <hm-follow @reply="reply" :count="getCount(0, comment)" :comment="comment.parent" v-if="comment.parent"></hm-follow>
     <div class="content">{{comment.content}}</div>
   </div>
 </template>

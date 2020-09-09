@@ -11,6 +11,7 @@ import MyStar from '../views/user/MyStar.vue'
 import Index from '../views/news/Index.vue'
 import Manage from '../views/news/Manage.vue'
 import PostDetail from '../views/news/PostDetail.vue'
+import Search from '../views/news/Search.vue'
 
 Vue.use(VueRouter)
 
@@ -64,6 +65,11 @@ const routes = [
     path: '/post-detail/:id',
     component: PostDetail,
     name: 'post-detail'
+  },
+  {
+    path: '/search',
+    component: Search,
+    name: 'search'
   }
 ]
 

@@ -43,7 +43,7 @@
       ></hm-comment>
     </div>
     <div class="footer-textaera" v-if="isShowTextArea">
-        <textarea :placeholder="'回复:' + nickname" ref="textarea" v-model="content"></textarea>
+        <textarea :placeholder="'回复:' + nickname" ref="textarea" @blur="onBlur" v-model="content"></textarea>
         <van-button type="danger" @click="publish">发送</van-button>
     </div>
     <div class="footer-input" v-else>
@@ -204,6 +204,14 @@ export default {
       // 回显nickname
       this.nickname = '@' + nickname
       this.replyId = id
+    },
+    onBlur() {
+      // console.log('触发')
+      if (!this.content) {
+        this.isShowTextArea = false
+        this.replyId = ''
+        this.nickname = ''
+      }
     }
   }
 }

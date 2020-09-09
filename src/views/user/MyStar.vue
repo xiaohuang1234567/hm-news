@@ -2,20 +2,8 @@
 <div class="mystar">
   <hm-header>我的收藏</hm-header>
   <div class="list">
-    <div class="item" v-for="item in list" :key="item.id">
-      <div class="info">
-        <div class="title">{{item.title}}</div>
-        <div class="user">
-          <span>{{item.user.nickname}}</span>
-          <span>{{item.comments.length}}跟帖</span>
-        </div>
-      </div>
-      <div class="img">
-        <img :src="$url(item.cover[0].url)" alt="">
-      </div>
-    </div>
+    <hm-post v-for="item in list" :key="item.id" :post="item"></hm-post>
   </div>
-
 </div>
 </template>
 
@@ -33,6 +21,7 @@ export default {
       const { statusCode, data } = res.data
       if (statusCode === 200) {
         this.list = data
+        this.list.forEach(item => { item.comment_length = item.comments.length })
         console.log(this.list)
       }
     }
@@ -44,33 +33,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.item{
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  display: flex;
-  .info{
-    flex: 1;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .user {
-      color: #666;
-      font-size: 14px;
-      span:first-child {
-        margin-right: 10px;
-      }
-    }
-  }
-  .img {
-    img {
-      width: 120px;
-      height: 74px;
-      //  作用和background-size类型 设置图片大小的
-      // cover 优点 保证图片大小覆盖完整的大小 缺点会有一部分被截取掉
-      // contain 保证图片完整的保留 但是会有留白
-      object-fit: cover;
-    }
-  }
-}
+
 </style>
