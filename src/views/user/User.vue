@@ -4,7 +4,7 @@
     <div class="header" @click="$router.push('/user-edit')">
       <div class="avatar">
         <!-- 路径必须拼成绝对路径 -->
-        <img :src="base + user.head_img" alt="">
+        <img :src="$base + user.head_img" alt="">
       </div>
       <div class="info">
         <div class="name">
@@ -43,11 +43,6 @@
 
 <script>
 export default {
-  computed: {
-    base() {
-      return this.$axios.defaults.baseURL
-    }
-  },
   data() {
     return {
       user: ''
